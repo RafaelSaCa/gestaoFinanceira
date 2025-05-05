@@ -1,0 +1,73 @@
+.container-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    height: 50vh;
+    margin: auto;
+    border-radius: 25px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 100px;
+ 
+}
+
+.container-input {
+    display: flex;
+    flex-direction: column;
+    margin-top: 45px;
+    margin-bottom: 30px;
+
+    label {
+        font-size: 18px;
+        margin-bottom: 2px;
+        color: gray;
+    }
+
+    input {
+        width: 320px;
+        height: 35px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+        background-color: #fffffff1;
+        font-family: Fira Sans;
+        margin-bottom: 16px;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: transparent;
+        /*remove a borda visível */
+        font-size: 20px;
+    }
+}
+
+button {
+    width: 320px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: black;
+    color: white;
+    font-family: Fira Sans;
+    font-size: 22px;
+    margin-bottom: 45px;
+    cursor: pointer;
+    
+    
+}
+
+
+button:hover{
+    background-color: gray;
+}
+legend{
+    color: gray;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

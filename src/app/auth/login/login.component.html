@@ -1,0 +1,18 @@
+<div class="container-login">
+  <Label style="font-size: 32px;">Seja Bem-Vindo!</Label>
+  <form [formGroup]="form">
+    <div class="container-input">
+
+      <label for="email">E-mail </label>
+      <input type="email" name="email" autocomplete="email"formControlName="email">
+
+      <label for="senha">Senha </label>
+      <input type="password" name="senha"  autocomplete="current-password" formControlName="senha">
+
+    </div>
+  </form>
+
+  <button (click)="login()" >LOGIN</button>
+  <legend>Não tem conta? <a [routerLink]="['/auth/register']" routerLinkActive="router-link-active" >Cadastra-se agora!</a></legend>
+
+</div>
