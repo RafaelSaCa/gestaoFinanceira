@@ -1,0 +1,24 @@
+
+<div class="container-login">
+    <Label style="font-size: 32px;">Cadastre-se</Label>
+    <form [formGroup]="form">
+      <div class="container-input">
+  
+        <label for="nome">Nome </label>
+        <input type="text" name="nome" autocomplete="nome" formControlName="nome">
+
+        <label for="sobrenome">Sobrenome </label>
+        <input type="text" name="sobrenome" autocomplete="sobrenome" formControlName="sobrenome">
+
+        <label for="email">E-mail </label>
+        <input type="email" name="email" autocomplete="email"formControlName="email">
+  
+        <label for="senha">Senha </label>
+        <input type="password" name="senha"  autocomplete="current-password" formControlName="senha">
+  
+      </div>
+    </form>
+  
+    <button (click)="cadastrar()" >SALVAR</button>
+
+  </div>
