@@ -1,24 +1,51 @@
-
 <div class="container-login">
-    <Label style="font-size: 32px;">Cadastre-se</Label>
-    <form [formGroup]="form">
-      <div class="container-input">
-  
-        <label for="nome">Nome </label>
+  <Label style="font-size: 32px; font-weight: 600;">Cadastre-se</Label>
+  <form [formGroup]="form">
+    <div class="container-input">
+
+      <label for="nome">Nome </label>
+      <div class="input-icon">
         <input type="text" name="nome" autocomplete="nome" formControlName="nome">
-
-        <label for="sobrenome">Sobrenome </label>
-        <input type="text" name="sobrenome" autocomplete="sobrenome" formControlName="sobrenome">
-
-        <label for="email">E-mail </label>
-        <input type="email" name="email" autocomplete="email"formControlName="email">
-  
-        <label for="senha">Senha </label>
-        <input type="password" name="senha"  autocomplete="current-password" formControlName="senha">
-  
+        <i class="fa-solid fa-circle-user"></i>
+        <div *ngIf="form.get('nome')?.touched && form.get('nome')?.invalid">
+          <small class="required">**Nome é obrigatório</small>
+        </div>
       </div>
-    </form>
-  
-    <button (click)="cadastrar()" >SALVAR</button>
 
-  </div>
+
+      <label for="sobrenome">Sobrenome </label>
+      <div class="input-icon">
+        <input type="text" name="sobrenome" autocomplete="sobrenome" formControlName="sobrenome">
+        <i class="fa-solid fa-circle-user"></i>
+        <div *ngIf="form.get('sobrenome')?.touched && form.get('sobrenome')?.invalid">
+          <small class="required">**Sobrenome é obrigatório</small>
+        </div>
+      </div>
+
+
+
+      <label for="email">E-mail </label>
+      <div class="input-icon">
+        <input type="email" name="email" autocomplete="email" formControlName="email">
+        <i class="fa-solid fa-envelope"></i>
+        <div *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+          <small class="required">**E-mail é obrigatório</small>
+        </div>
+      </div>
+
+
+      <label for="senha">Senha </label>
+      <div class="input-icon">
+        <input type="password" name="senha" autocomplete="current-password" formControlName="senha">
+        <i class="fa-solid fa-lock"></i>
+        <div *ngIf="form.get('senha')?.touched && form.get('senha')?.invalid">
+          <small class="required">**Senha é obrigatória</small>
+        </div>
+      </div>
+
+    </div>
+  </form>
+
+  <button (click)="cadastrar()">Salvar</button>
+
+</div>

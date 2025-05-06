@@ -22,6 +22,8 @@
         font-size: 18px;
         margin-bottom: 2px;
         color: gray;
+        margin-top: 15px;
+        margin-left: 8px;
     }
 
     input {
@@ -32,7 +34,7 @@
         box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
         background-color: #fffffff1;
         font-family: Fira Sans;
-        margin-bottom: 16px;
+        margin-bottom: 6px;
     }
 
     input:focus {
@@ -41,6 +43,26 @@
         /*remove a borda visível */
         font-size: 20px;
     }
+}
+
+
+.input-icon {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.input-icon i {
+    position: absolute;
+    top: 38%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: rgb(174, 174, 174);
+    font-size: 1.2rem;
+}
+
+.required {
+    color: red;
+    margin: auto;
 }
 
 button {
@@ -71,3 +93,4 @@ a {
     text-decoration: none;
     color: black;
 }
+

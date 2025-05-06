@@ -3,10 +3,11 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { AuthService } from '../../service/auth.service';
 import { Router } from '@angular/router';
 import { AlertService } from '../../../shared/services/alert.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cadastro',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './cadastro.component.html',
   styleUrl: './cadastro.component.scss'
 })
@@ -21,15 +22,18 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      nome: ['', [Validators.required, Validators.maxLength(2)]],
+      nome: ['', [Validators.required, Validators.minLength(2)]],
       sobrenome: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
-      senha: ['', [Validators.required, Validators.minLength(6)]],
+      senha: ['', [Validators.required, Validators.minLength(3)]],
     });
   }
 
 
   cadastrar() {
+    if (this.form.invalid){
+      this.form.markAllAsTouched();
+    }
     const dados = this.form.value;
 
     this.service.register(dados).subscribe({

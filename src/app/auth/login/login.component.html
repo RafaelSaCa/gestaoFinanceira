@@ -1,18 +1,31 @@
 <div class="container-login">
-  <Label style="font-size: 32px;">Seja Bem-Vindo!</Label>
+  <Label style="font-size: 32px; font-weight: 500;">Seja Bem-Vindo!</Label>
   <form [formGroup]="form">
     <div class="container-input">
 
       <label for="email">E-mail </label>
-      <input type="email" name="email" autocomplete="email"formControlName="email">
+      <div class="input-icon">
+        <i class="fa-solid fa-envelope"></i>
+        <input type="email" name="email" autocomplete="email" formControlName="email">
+        <div *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+          <small class="required">**E-mail é obrigatório</small>
+        </div>
+      </div>
 
       <label for="senha">Senha </label>
-      <input type="password" name="senha"  autocomplete="current-password" formControlName="senha">
+      <div class="input-icon">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" name="senha" autocomplete="current-password" formControlName="senha">
+        <div *ngIf="form.get('senha')?.touched && form.get('senha')?.invalid">
+          <small class="required">**Senha é obrigatória</small>
+        </div>
+      </div>
 
     </div>
   </form>
 
-  <button (click)="login()" >LOGIN</button>
-  <legend>Não tem conta? <a [routerLink]="['/auth/register']" routerLinkActive="router-link-active" >Cadastra-se agora!</a></legend>
+  <button (click)="login()">LOGIN</button>
+  <legend>Não tem conta? <a [routerLink]="['/auth/register']" routerLinkActive="router-link-active">Cadastra-se
+      agora!</a></legend>
 
 </div>

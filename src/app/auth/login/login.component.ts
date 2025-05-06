@@ -24,11 +24,14 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      senha: ['', [Validators.required, Validators.minLength(6)]],
+      senha: ['', [Validators.required, Validators.minLength(3)]],
     });
   }
 
   login() {
+    if (this.form.invalid){
+      this.form.markAllAsTouched();
+    }
     const { email, senha } = this.form.value;
 
     this.service.login({ email, senha }).subscribe({
